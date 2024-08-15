@@ -1,23 +1,25 @@
 import { Link } from "react-router-dom";
 import Search from "./Search";
-import app from "../img/reg.png"
-
+import app from "../img/reg.png";
 
 export default function Header({cartItems}) {
-    return <nav className="navbar row">
+    return (
+        <nav className="navbar row">
             <div className="col-12 col-md-3">
                 <div className="navbar-brand">
-                <Link to="/"> <img width="150px" src="/images/logo.png" /></Link>
+                    <Link to="/"> 
+                        <img width="150px" src="/images/logo.png" alt="Website Logo" />
+                    </Link>
                 </div>
             </div>
 
             <div className="col-12 col-md-6 mt-2 mt-md-0">
-              <Search/>
+                <Search />
             </div>
 
             <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
                 <Link to={"/Login"}>
-                <img src={app} width="30"></img>
+                    <img src={app} width="30" alt="User Login Icon" />
                 </Link>
                 
                 <Link to={"/cart"}>
@@ -26,4 +28,5 @@ export default function Header({cartItems}) {
                 </Link>
             </div>
         </nav>
+    );
 }
